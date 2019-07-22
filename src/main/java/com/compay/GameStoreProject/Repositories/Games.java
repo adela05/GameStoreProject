@@ -37,11 +37,11 @@ public class Games {
         this.studio = studio;
     }
 
-    public Character geteSRBRating() {
+    public Character getESRBRating() {
         return eSRBRating;
     }
 
-    public void seteSRBRating(Character eSRBRating) {
+    public void setESRBRating(Character eSRBRating) {
         this.eSRBRating = eSRBRating;
     }
 
