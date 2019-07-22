@@ -9,5 +9,4 @@ import org.springframework.stereotype.Component;
 public class GameService {
 @Autowired
     private GameRepository gameRepo;
-public Games add
 }
