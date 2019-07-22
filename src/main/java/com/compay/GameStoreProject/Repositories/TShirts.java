@@ -19,11 +19,11 @@ public class TShirts {
     @NotEmpty
     private Character size;
 
-    public Integer gettShirtId() {
+    public Integer getTShirtId() {
         return tShirtId;
     }
 
-    public void settShirtId(Integer tShirtId) {
+    public void setTShirtId(Integer tShirtId) {
         this.tShirtId = tShirtId;
     }
 
