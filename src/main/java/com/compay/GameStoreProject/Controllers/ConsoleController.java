@@ -15,11 +15,11 @@ public class ConsoleController {
 
     @RequestMapping(value = "/consoles", method = RequestMethod.GET)
     public List<Consoles> getAllConsoles(){
-        return service.findAll();
+        return service.getAllConsoles();
     }
     @RequestMapping(value = "/consoles/{manufacturer}", method = RequestMethod.GET)
     public String getConsolesByManufacturer(@PathVariable String manufacturer){
-        return service.getManufacturer(manufacturer);
+        return service.findByManufacturer(manufacturer);
     }
     @RequestMapping(value = "/consoles/{id}", method = RequestMethod.DELETE)
     public Integer deleteConsolebyId(@PathVariable int consoleId){

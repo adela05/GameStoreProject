@@ -27,7 +27,7 @@ public class GameController {
     }
     @RequestMapping(value = "/games", method = RequestMethod.POST)
     public Games saveGame(@RequestBody @Valid Games game){
-        service.save(game);
+        service.saveGame(game);
         return game;
     }
     @RequestMapping(value = "/games/{studio}", method = RequestMethod.GET)
