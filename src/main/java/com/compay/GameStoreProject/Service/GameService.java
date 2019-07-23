@@ -30,11 +30,6 @@ public class GameService {
     return gameRepo.findAll();
 }
 
-    // Get a Game by Id
-    public Games getGameById(int id){
-        return gameRepo.getOne(id);
-    }
-
     // Delete a Game
     public Integer deleteGame(int id){
         gameRepo.deleteById(id);
