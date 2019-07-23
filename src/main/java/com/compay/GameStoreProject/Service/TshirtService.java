@@ -1,3 +1,5 @@
+
+package com.compay.GameStoreProject.Service;
 package com.compay.GameStoreProject.Service;
 
 import com.compay.GameStoreProject.Repositories.Games;
@@ -34,3 +36,4 @@ public class TshirtService {
         tShirtRepo.deleteById(id);
     }
 }
+

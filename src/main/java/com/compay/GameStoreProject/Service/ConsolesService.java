@@ -1,5 +1,7 @@
 package com.compay.GameStoreProject.Service;
 
+
+public class ConsolesService {
 import com.compay.GameStoreProject.Repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -31,4 +33,5 @@ public class ConsolesService {
     // Delete a Console
     public void deleteConsoles(int id){ consoleRepo.deleteById(id);
     }
+
 }

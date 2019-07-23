@@ -30,7 +30,6 @@ public class TShirts {
     @Length(max = 11)
     private Integer quantity;
 
-
     public Integer getTShirtId() {
         return tShirtId;
     }
@@ -39,16 +38,16 @@ public class TShirts {
         this.tShirtId = tShirtId;
     }
 
-    public String getSize() {
-        return size;
+    public String getSize(String size) {
+        return this.size;
     }
 
     public void setSize(String size) {
         this.size = size;
     }
 
-    public String getColor() {
-        return color;
+    public String getColor(String color) {
+        return this.color;
     }
 
     public void setColor(String color) {
@@ -78,7 +77,9 @@ public class TShirts {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+}
 
     @OneToMany(mappedBy = "tShirtId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Games> games;
 }
+
