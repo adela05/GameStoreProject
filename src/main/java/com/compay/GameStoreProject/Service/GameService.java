@@ -17,6 +17,11 @@ public class GameService {
         gameRepo.save(game);
         return game;
     }
+    public void updateGame(Games game, int id) {
+        if(game.getGameId() == id) {
+            gameRepo.save(game);
+        }
+    }
 
     // Search all Games List
     public List<Games> getAllGames(){
