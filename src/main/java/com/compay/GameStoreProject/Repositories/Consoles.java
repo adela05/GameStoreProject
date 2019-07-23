@@ -91,6 +91,4 @@ public class Consoles {
         this.quantity = quantity;
     }
 
-    @OneToMany(mappedBy = "consoleId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<Games> games;
 }
