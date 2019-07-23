@@ -33,15 +33,10 @@ public class Games {
     @Length(max = 11)
     private Integer quantity;
 
-<<<<<<< HEAD
+    // Getters and Setters
 
     public Integer getGameId() {
         return gameId;
-=======
-    // Getters and Setters
-    public Integer getGameId(int gameId) {
-        return this.gameId;
->>>>>>> f69b25621691e9ae408d84697ed09182498d7850
     }
 
     public void setGameId(Integer gameId) {

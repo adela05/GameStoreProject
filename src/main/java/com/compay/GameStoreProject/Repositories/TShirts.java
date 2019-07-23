@@ -30,11 +30,8 @@ public class TShirts {
     @Length(max = 11)
     private Integer quantity;
 
-
-
-
-    public Integer getTShirtId(int tShirtId) {
-        return this.tShirtId;
+    public Integer getTShirtId() {
+        return tShirtId;
 
     }
 
@@ -81,7 +78,6 @@ public class TShirts {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-
 
     @OneToMany(mappedBy = "tShirtId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Games> games;
