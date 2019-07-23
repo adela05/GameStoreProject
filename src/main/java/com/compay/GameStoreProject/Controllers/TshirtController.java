@@ -1,4 +1,4 @@
-/*package com.compay.GameStoreProject.Controllers;
+package com.compay.GameStoreProject.Controllers;
 
 import com.compay.GameStoreProject.Repositories.TShirts;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,13 +29,13 @@ public class TshirtController {
         service.save(tshirt);
         return tshirt;
     }
-    @RequestMapping(value = "/tshirts/{color}", method = RequestMethod.GET)
+    @RequestMapping(value = "/tshirts/color/{color}", method = RequestMethod.GET)
     public String findByColor(@PathVariable String color){
         return service.getColor(color);
     }
-    @RequestMapping(value = "/tshirtss/{size}", method = RequestMethod.GET)
+    @RequestMapping(value = "/tshirts/size/{size}", method = RequestMethod.GET)
     public String findBySize(@PathVariable String size){
         return service.getSize(size);
     }
 }
-*/
+
