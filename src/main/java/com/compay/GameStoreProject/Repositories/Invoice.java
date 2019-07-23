@@ -171,6 +171,5 @@ public class Invoice {
         this.total = total;
     }
 
-    @OneToMany(mappedBy = "invoiceId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<Games> games;
+
 }

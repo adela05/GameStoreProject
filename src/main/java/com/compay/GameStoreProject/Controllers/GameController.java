@@ -21,12 +21,12 @@ public class GameController {
         return service.getAllGames();
     }
     @RequestMapping(value = "/games/{id}", method = RequestMethod.DELETE)
-    public Integer deleteGame(@PathVariable Integer gameId){
-        return service.deleteGame(gameId);
+    public Integer deleteGame(@PathVariable Integer id){
+        return service.deleteGame(id);
     }
     @RequestMapping(value = "/games/{id}", method = RequestMethod.PUT)
-    public void updateGame(@RequestBody @Valid Games game, @PathVariable Integer gameId){
-        service.updateGame(game, gameId);
+    public void updateGame(@RequestBody @Valid Games game, @PathVariable Integer id){
+        service.updateGame(game, id);
     }
     @RequestMapping(value = "/games", method = RequestMethod.POST)
     public Games saveGame(@RequestBody @Valid Games game){

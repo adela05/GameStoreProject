@@ -79,7 +79,6 @@ public class TShirts {
         this.quantity = quantity;
     }
 
-    @OneToMany(mappedBy = "tShirtId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<Games> games;
+
 }
 
