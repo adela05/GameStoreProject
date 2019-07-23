@@ -31,7 +31,7 @@ public class ConsolesService {
     }
 
     // Delete a Console
-    public Consoles deleteConsoleById(int id){ consoleRepo.deleteById(id);
+    public Consoles deleteConsoleById(Integer id){ consoleRepo.deleteById(id);
         return null;
     }
     public List<Consoles> getConsoleByManufacturer(String manufacturer){

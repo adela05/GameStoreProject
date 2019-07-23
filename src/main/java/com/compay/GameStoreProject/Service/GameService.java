@@ -19,7 +19,7 @@ public class GameService {
         return game;
     }
     // Update a Game
-    public void updateGame(Games game, int id) {
+    public void updateGame(Games game, Integer id) {
         if(game.getGameId() == id) {
             gameRepo.save(game);
         }
@@ -31,7 +31,7 @@ public class GameService {
 }
 
     // Delete a Game
-    public Integer deleteGame(int id){
+    public Integer deleteGame(Integer id){
         gameRepo.deleteById(id);
         return null;
     }
