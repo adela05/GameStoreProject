@@ -1,6 +1,8 @@
 package com.compay.GameStoreProject.Controllers;
 
 import com.compay.GameStoreProject.Repositories.Consoles;
+import com.compay.GameStoreProject.Service.ConsolesService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,27 +12,29 @@ import java.util.List;
 @RestController
 public class ConsoleController {
     @Autowired
-    private Consoles consoleRepo;
+
+    private ConsolesService service;
 
     @RequestMapping(value = "/consoles", method = RequestMethod.GET)
     public List<Consoles> getAllConsoles(){
-        return consoleRepo.findAll();
+        return service.getAllConsoles();
     }
-    @RequestMapping(value = "/consoles/{manufacturer}", method = RequestMethod.GET)
-    public String getConsolesByManufacturer(@PathVariable String manufacturer){
-        return consoleRepo.getManufacturer(manufacturer);
-    }
+
     @RequestMapping(value = "/consoles/{id}", method = RequestMethod.DELETE)
-    public Integer deleteConsolebyId(@PathVariable int consoleId){
-        return consoleRepo.getConsoleId(consoleId);
+    public Consoles deleteConsolebyId(@PathVariable Integer consoleId){
+        return service.deleteConsoleById(consoleId);
     }
     @RequestMapping(value = "/consoles/{id}", method = RequestMethod.PUT)
-    public void updateConsole(@RequestBody @Valid Consoles console, @PathVariable int consoleId){
-        consoleRepo.save(console);
+    public void updateConsoleById(@RequestBody @Valid Consoles console, @PathVariable Integer consoleId){
+        service.updateConsoleById(consoleId);
     }
     @RequestMapping(value = "/consoles", method = RequestMethod.POST)
-    public Consoles addConsole(@RequestBody @Valid Consoles console){
-        consoleRepo.save(console);
+    public Consoles saveConsole(@RequestBody @Valid Consoles console){
+        service.saveConsole(console);
         return console;
+    }
+    @RequestMapping(value = "/consoles/manufacturer/{manufacturer}", method = RequestMethod.GET)
+    public List<Consoles> getConsolesByManufacturer(@PathVariable String manufacturer){
+        return service.getConsoleByManufacturer(manufacturer);
     }
 }

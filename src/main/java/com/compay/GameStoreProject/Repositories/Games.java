@@ -33,6 +33,8 @@ public class Games {
     @Length(max = 11)
     private Integer quantity;
 
+    // Getters and Setters
+
     public Integer getGameId() {
         return gameId;
     }

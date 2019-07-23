@@ -32,6 +32,7 @@ public class TShirts {
 
     public Integer getTShirtId() {
         return tShirtId;
+
     }
 
     public void setTShirtId(Integer tShirtId) {
@@ -77,7 +78,6 @@ public class TShirts {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-}
 
     @OneToMany(mappedBy = "tShirtId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Games> games;

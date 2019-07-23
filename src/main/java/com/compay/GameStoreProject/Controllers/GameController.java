@@ -1,6 +1,9 @@
 package com.compay.GameStoreProject.Controllers;
 
 import com.compay.GameStoreProject.Repositories.Games;
+
+import com.compay.GameStoreProject.Service.GameService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,35 +13,37 @@ import java.util.List;
 @RestController
 public class GameController {
     @Autowired
-    private Games gameRepo;
+
+    private GameService service;
 
     @RequestMapping(value = "/games", method = RequestMethod.GET)
     public List<Games> getAllGames(){
-        return gameRepo.findAll();
+        return service.getAllGames();
     }
     @RequestMapping(value = "/games/{id}", method = RequestMethod.DELETE)
-    public Integer deleteGame(@PathVariable int gameId){
-        return gameRepo.getGameId(gameId);
+    public Integer deleteGame(@PathVariable Integer gameId){
+        return service.deleteGame(gameId);
     }
     @RequestMapping(value = "/games/{id}", method = RequestMethod.PUT)
-    public void updateTshirt(@RequestBody @Valid Games game, @PathVariable int gameId){
-        gameRepo.save(game);
+    public void updateGame(@RequestBody @Valid Games game, @PathVariable Integer gameId){
+        service.updateGame(game, gameId);
     }
     @RequestMapping(value = "/games", method = RequestMethod.POST)
-    public Games addGame(@RequestBody @Valid Games game){
-        gameRepo.save(game);
+    public Games saveGame(@RequestBody @Valid Games game){
+        service.saveGame(game);
         return game;
     }
-    @RequestMapping(value = "/games/{studio}", method = RequestMethod.GET)
-    public String findByStudio(@PathVariable String studio){
-        return gameRepo.getStudio(studio);
+    @RequestMapping(value = "/games/studio/{studio}", method = RequestMethod.GET)
+    public List<Games> findByStudio(@PathVariable String studio){
+        return service.findByStudio(studio);
     }
-    @RequestMapping(value = "/games/{rating}", method = RequestMethod.GET)
-    public String findByESRBRating(@PathVariable Character eSRBRating){
-        return gameRepo.getESRBRating(eSRBRating);
+    @RequestMapping(value = "/games/rating/{rating}", method = RequestMethod.GET)
+    public List<Games> findByESRBRating(@PathVariable Character eSRBRating){
+        return service.findByESRBRating(eSRBRating);
     }
-    @RequestMapping(value = "/games/{title}", method = RequestMethod.GET)
-    public String findByTitle(@PathVariable String title){
-        return gameRepo.getTitle(title);
+    @RequestMapping(value = "/games/title/{title}", method = RequestMethod.GET)
+    public List<Games> findByTitle(@PathVariable String title){
+        return service.findByTitle(title);
+
     }
 }

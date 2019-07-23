@@ -1,8 +1,5 @@
-
 package com.compay.GameStoreProject.Service;
 
-
-import com.compay.GameStoreProject.Repositories.Games;
 import com.compay.GameStoreProject.Repositories.TShirtRepository;
 import com.compay.GameStoreProject.Repositories.TShirts;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +29,9 @@ public class TshirtService {
     }
 
     // Delete a TShirt
-    public void deleteTShirt(int id){
+    public Integer deleteTShirt(int id){
         tShirtRepo.deleteById(id);
+        return null;
     }
 
     // Search by Color
@@ -45,4 +43,5 @@ public class TshirtService {
         return tShirtRepo.findAll();
     }
 }
+
 

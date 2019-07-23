@@ -12,6 +12,7 @@ public class GameService {
 @Autowired
     private GameRepository gameRepo;
 
+
     // Save a Game
     public Games saveGame(Games game){
         gameRepo.save(game);
@@ -35,10 +36,10 @@ public class GameService {
     }
 
     // Delete a Game
-    public void deleteGame(int id){
+    public Integer deleteGame(int id){
         gameRepo.deleteById(id);
+        return null;
     }
-
     // List by Studio
     public List<Games> findByStudio(String studio){
         return gameRepo.findAll();
