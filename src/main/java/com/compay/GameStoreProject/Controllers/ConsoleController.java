@@ -22,11 +22,11 @@ public class ConsoleController {
 
     @RequestMapping(value = "/consoles/{id}", method = RequestMethod.DELETE)
     public Consoles deleteConsolebyId(@PathVariable Integer consoleId){
-        return service.getConsoleById(consoleId);
+        return service.deleteConsoleById(consoleId);
     }
     @RequestMapping(value = "/consoles/{id}", method = RequestMethod.PUT)
     public void updateConsoleById(@RequestBody @Valid Consoles console, @PathVariable Integer consoleId){
-        service.updateConsoleById(console);
+        service.updateConsoleById(consoleId);
     }
     @RequestMapping(value = "/consoles", method = RequestMethod.POST)
     public Consoles saveConsole(@RequestBody @Valid Consoles console){
@@ -35,6 +35,6 @@ public class ConsoleController {
     }
     @RequestMapping(value = "/consoles/manufacturer/{manufacturer}", method = RequestMethod.GET)
     public List<Consoles> getConsolesByManufacturer(@PathVariable String manufacturer){
-        return service.getConsolesByManufacturer(manufacturer);
+        return service.getConsoleByManufacturer(manufacturer);
     }
 }

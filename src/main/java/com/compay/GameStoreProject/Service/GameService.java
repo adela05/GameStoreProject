@@ -18,6 +18,7 @@ public class GameService {
         gameRepo.save(game);
         return game;
     }
+    // Update a Game
     public void updateGame(Games game, int id) {
         if(game.getGameId() == id) {
             gameRepo.save(game);
@@ -39,5 +40,16 @@ public class GameService {
         gameRepo.deleteById(id);
         return null;
     }
-
+    // List by Studio
+    public List<Games> findByStudio(String studio){
+        return gameRepo.findAll();
+    }
+    // List by ESRB Rating
+    public List<Games> findByESRBRating(Character eSRBRating){
+        return gameRepo.findAll();
+    }
+    // List by Title
+    public List<Games> findByTitle(String title){
+        return gameRepo.findAll();
+    }
 }

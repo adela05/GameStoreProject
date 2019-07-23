@@ -24,7 +24,7 @@ public class TshirtService {
     }
 
     // Get a TShirt by Id
-    public TShirts getTShirtById(int id){
+    public TShirts updateTShirtById(int id){
         return tShirtRepo.getOne(id);
     }
 
@@ -32,6 +32,15 @@ public class TshirtService {
     public Integer deleteTShirt(int id){
         tShirtRepo.deleteById(id);
         return null;
+    }
+
+    // Search by Color
+    public List<TShirts> findByColor(String color){
+        return tShirtRepo.findAll();
+    }
+    // Search by size
+    public List<TShirts> findBySize(String size){
+        return tShirtRepo.findAll();
     }
 }
 
