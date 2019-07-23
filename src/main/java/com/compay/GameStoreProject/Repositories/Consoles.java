@@ -28,10 +28,10 @@ public class Consoles {
     @Length(max = 20)
     private String processor;
     @NotNull
-    @Length(max = 5, min = 2)
+    //@Length(max = 5, min = 2)
     private Double price;
     @NotNull
-    @Length(max = 11)
+    //@Length(max = 11)
     private Integer quantity;
 
 

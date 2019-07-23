@@ -40,7 +40,7 @@ public class GameService {
         return gameRepo.findAll();
     }
     // List by ESRB Rating
-    public List<Games> findByESRBRating(Character eSRBRating){
+    public List<Games> findByESRBRating(String eSRBRating){
         return gameRepo.findAll();
     }
     // List by Title
