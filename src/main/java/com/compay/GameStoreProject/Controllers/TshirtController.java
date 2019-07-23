@@ -24,8 +24,8 @@ public class TshirtController {
         return service.deleteTShirt(tShirtId);
     }
     @RequestMapping(value = "/tshirts/{id}", method = RequestMethod.PUT)
-    public void updateTshirt(@RequestBody @Valid TShirts tshirt, @PathVariable Integer tShirtId){
-        service.saveTShirt(tshirt);
+    public void updateTShirtById(@RequestBody @Valid TShirts tshirt, @PathVariable Integer tShirtId){
+        service.updateTShirtById(tShirtId);
     }
     @RequestMapping(value = "/tshirts", method = RequestMethod.POST)
     public TShirts addTshirt(@RequestBody @Valid TShirts tshirt){
