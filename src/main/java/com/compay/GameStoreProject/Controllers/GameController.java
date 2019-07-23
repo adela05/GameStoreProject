@@ -33,17 +33,17 @@ public class GameController {
         service.saveGame(game);
         return game;
     }
-    @RequestMapping(value = "/games/{studio}", method = RequestMethod.GET)
-    public String findByStudio(@PathVariable String studio){
-        return service.getStudio(studio);
+    @RequestMapping(value = "/games/studio/{studio}", method = RequestMethod.GET)
+    public List<Games> findByStudio(@PathVariable String studio){
+        return service.findByStudio(studio);
     }
-    @RequestMapping(value = "/games/{rating}", method = RequestMethod.GET)
+    @RequestMapping(value = "/games/rating/{rating}", method = RequestMethod.GET)
     public String findByESRBRating(@PathVariable Character eSRBRating){
-        return service.getESRBRating(eSRBRating);
+        return service.findByESRBRating(eSRBRating);
     }
-    @RequestMapping(value = "/games/{title}", method = RequestMethod.GET)
+    @RequestMapping(value = "/games/title/{title}", method = RequestMethod.GET)
     public String findByTitle(@PathVariable String title){
-        return service.getTitle(title);
+        return service.findByTitle(title);
 
     }
 }

@@ -19,21 +19,22 @@ public class ConsoleController {
     public List<Consoles> getAllConsoles(){
         return service.getAllConsoles();
     }
-    @RequestMapping(value = "/consoles/{manufacturer}", method = RequestMethod.GET)
-    public String getConsolesByManufacturer(@PathVariable String manufacturer){
-        return service.findByManufacturer(manufacturer);
-    }
+
     @RequestMapping(value = "/consoles/{id}", method = RequestMethod.DELETE)
-    public Consoles deleteConsolebyId(@PathVariable int consoleId){
+    public Consoles deleteConsolebyId(@PathVariable Integer consoleId){
         return service.getConsoleById(consoleId);
     }
     @RequestMapping(value = "/consoles/{id}", method = RequestMethod.PUT)
-    public void updateConsole(@RequestBody @Valid Consoles console, @PathVariable int consoleId){
-        service.saveConsole(console);
+    public void updateConsoleById(@RequestBody @Valid Consoles console, @PathVariable Integer consoleId){
+        service.updateConsoleById(console);
     }
     @RequestMapping(value = "/consoles", method = RequestMethod.POST)
     public Consoles saveConsole(@RequestBody @Valid Consoles console){
         service.saveConsole(console);
         return console;
+    }
+    @RequestMapping(value = "/consoles/manufacturer/{manufacturer}", method = RequestMethod.GET)
+    public List<Consoles> getConsolesByManufacturer(@PathVariable String manufacturer){
+        return service.getConsolesByManufacturer(manufacturer);
     }
 }

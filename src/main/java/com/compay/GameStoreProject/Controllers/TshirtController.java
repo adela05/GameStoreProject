@@ -25,7 +25,7 @@ public class TshirtController {
     }
     @RequestMapping(value = "/tshirts/{id}", method = RequestMethod.PUT)
     public void updateTshirt(@RequestBody @Valid TShirts tshirt, @PathVariable Integer tShirtId){
-        service.saveTShirt(tshirt);
+        service.updateTshirt(tshirt);
     }
     @RequestMapping(value = "/tshirts", method = RequestMethod.POST)
     public TShirts addTshirt(@RequestBody @Valid TShirts tshirt){
@@ -33,11 +33,11 @@ public class TshirtController {
         return tshirt;
     }
     @RequestMapping(value = "/tshirts/color/{color}", method = RequestMethod.GET)
-    public String findByColor(@PathVariable String color){
-        return service.getColor(color);
+    public List<TShirts> findByColor(@PathVariable String color){
+        return service.findByColor(color);
     }
     @RequestMapping(value = "/tshirts/size/{size}", method = RequestMethod.GET)
-    public String findBySize(@PathVariable String size){
-        return service.getSize(size);
+    public List<TShirts> findBySize(@PathVariable String size){
+        return service.findBySize(size);
     }
 }
