@@ -33,25 +33,31 @@ public class Games {
     @Length(max = 11)
     private Integer quantity;
 
+<<<<<<< HEAD
 
     public Integer getGameId() {
         return gameId;
+=======
+    // Getters and Setters
+    public Integer getGameId(int gameId) {
+        return this.gameId;
+>>>>>>> f69b25621691e9ae408d84697ed09182498d7850
     }
 
     public void setGameId(Integer gameId) {
         this.gameId = gameId;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitle(String title) {
+        return this.title;
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public String getESRBRating() {
-        return eSRBRating;
+    public String getESRBRating(Character eSRBRating) {
+        return this.eSRBRating;
     }
 
     public void setESRBRating(String eSRBRating) {
@@ -74,8 +80,8 @@ public class Games {
         this.price = price;
     }
 
-    public String getStudio() {
-        return studio;
+    public String getStudio(String studio) {
+        return this.studio;
     }
 
     public void setStudio(String studio) {

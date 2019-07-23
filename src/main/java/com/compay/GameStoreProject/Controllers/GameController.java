@@ -1,7 +1,9 @@
 package com.compay.GameStoreProject.Controllers;
 
 import com.compay.GameStoreProject.Repositories.Games;
+
 import com.compay.GameStoreProject.Service.GameService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +13,7 @@ import java.util.List;
 @RestController
 public class GameController {
     @Autowired
+
     private GameService service;
 
     @RequestMapping(value = "/games", method = RequestMethod.GET)
@@ -41,5 +44,6 @@ public class GameController {
     @RequestMapping(value = "/games/{title}", method = RequestMethod.GET)
     public String findByTitle(@PathVariable String title){
         return service.getTitle(title);
+
     }
 }

@@ -2,6 +2,7 @@ package com.compay.GameStoreProject.Controllers;
 
 import com.compay.GameStoreProject.Repositories.Consoles;
 import com.compay.GameStoreProject.Service.ConsolesService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @RestController
 public class ConsoleController {
     @Autowired
+
     private ConsolesService service;
 
     @RequestMapping(value = "/consoles", method = RequestMethod.GET)
@@ -22,16 +24,16 @@ public class ConsoleController {
         return service.findByManufacturer(manufacturer);
     }
     @RequestMapping(value = "/consoles/{id}", method = RequestMethod.DELETE)
-    public Integer deleteConsolebyId(@PathVariable int consoleId){
-        return service.getConsoleId(consoleId);
+    public Consoles deleteConsolebyId(@PathVariable int consoleId){
+        return service.getConsoleById(consoleId);
     }
     @RequestMapping(value = "/consoles/{id}", method = RequestMethod.PUT)
     public void updateConsole(@RequestBody @Valid Consoles console, @PathVariable int consoleId){
-        service.save(console);
+        service.saveConsole(console);
     }
     @RequestMapping(value = "/consoles", method = RequestMethod.POST)
-    public Consoles addConsole(@RequestBody @Valid Consoles console){
-        service.save(console);
+    public Consoles saveConsole(@RequestBody @Valid Consoles console){
+        service.saveConsole(console);
         return console;
     }
 }

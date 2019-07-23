@@ -31,4 +31,5 @@ public class ConsolesService {
     // Delete a Console
     public void deleteConsoles(int id){ consoleRepo.deleteById(id);
     }
+
 }
