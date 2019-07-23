@@ -1,8 +1,8 @@
 package com.compay.GameStoreProject.Service;
 
 
-public class ConsolesService {
-import com.compay.GameStoreProject.Repositories.*;
+import com.compay.GameStoreProject.Repositories.ConsoleRepository;
+import com.compay.GameStoreProject.Repositories.Consoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -25,13 +25,16 @@ public class ConsolesService {
         return consoleRepo.findAll();
     }
 
-    // Get a Console by ID
-    public Consoles getConsoleById(int id){
-        return consoleRepo.getOne(id);
+    // Update a Console by ID
+    public Consoles updateConsoleById(int id){
+         return consoleRepo.getOne(id);
     }
 
     // Delete a Console
-    public void deleteConsoles(int id){ consoleRepo.deleteById(id);
+    public void deleteConsoleById(int id){ consoleRepo.deleteById(id);
+    }
+    public List<Consoles> getConsoleByManufacturer(String manufacturer){
+        return consoleRepo.findAll();
     }
 
 }

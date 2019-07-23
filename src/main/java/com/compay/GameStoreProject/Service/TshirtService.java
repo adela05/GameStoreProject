@@ -1,6 +1,6 @@
 
 package com.compay.GameStoreProject.Service;
-package com.compay.GameStoreProject.Service;
+
 
 import com.compay.GameStoreProject.Repositories.Games;
 import com.compay.GameStoreProject.Repositories.TShirtRepository;
@@ -27,13 +27,22 @@ public class TshirtService {
     }
 
     // Get a TShirt by Id
-    public TShirts getTShirtById(int id){
+    public TShirts updateTShirtById(int id){
         return tShirtRepo.getOne(id);
     }
 
     // Delete a TShirt
     public void deleteTShirt(int id){
         tShirtRepo.deleteById(id);
+    }
+
+    // Search by Color
+    public List<TShirts> findByColor(String color){
+        return tShirtRepo.findAll();
+    }
+    // Search by size
+    public List<TShirts> findBySize(String size){
+        return tShirtRepo.findAll();
     }
 }
 
