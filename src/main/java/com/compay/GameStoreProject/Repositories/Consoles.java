@@ -91,5 +91,4 @@ public class Consoles {
         this.quantity = quantity;
     }
 
-
 }

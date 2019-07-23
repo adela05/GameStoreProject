@@ -20,12 +20,12 @@ public class TshirtController {
         return service.getAllTShirts();
     }
     @RequestMapping(value = "/tshirts/{id}", method = RequestMethod.DELETE)
-    public Integer deleteTshirt(@PathVariable Integer tShirtId){
-        return service.deleteTShirt(tShirtId);
+    public Integer deleteTshirt(@PathVariable Integer id){
+        return service.deleteTShirt(id);
     }
     @RequestMapping(value = "/tshirts/{id}", method = RequestMethod.PUT)
-    public void updateTShirtById(@RequestBody @Valid TShirts tshirt, @PathVariable Integer tShirtId){
-        service.updateTShirtById(tShirtId);
+    public void updateTShirtById(@RequestBody @Valid TShirts tshirt, @PathVariable Integer id){
+        service.updateTShirtById(id);
     }
     @RequestMapping(value = "/tshirts", method = RequestMethod.POST)
     public TShirts addTshirt(@RequestBody @Valid TShirts tshirt){
