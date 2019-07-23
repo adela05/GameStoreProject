@@ -43,7 +43,7 @@ public class Games {
         this.gameId = gameId;
     }
 
-    public String getTitle(String title) {
+    public String getTitle() {
         return this.title;
     }
 
@@ -51,7 +51,7 @@ public class Games {
         this.title = title;
     }
 
-    public String getESRBRating(Character eSRBRating) {
+    public String getESRBRating() {
         return this.eSRBRating;
     }
 
@@ -75,7 +75,7 @@ public class Games {
         this.price = price;
     }
 
-    public String getStudio(String studio) {
+    public String getStudio() {
         return this.studio;
     }
 
