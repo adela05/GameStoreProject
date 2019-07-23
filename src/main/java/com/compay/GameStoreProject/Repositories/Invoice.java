@@ -171,5 +171,4 @@ public class Invoice {
         this.total = total;
     }
 
-
 }

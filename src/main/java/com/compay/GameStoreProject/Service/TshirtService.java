@@ -24,12 +24,12 @@ public class TshirtService {
     }
 
     // Get a TShirt by Id
-    public TShirts updateTShirtById(int id){
+    public TShirts updateTShirtById(Integer id){
         return tShirtRepo.getOne(id);
     }
 
     // Delete a TShirt
-    public Integer deleteTShirt(int id){
+    public Integer deleteTShirt(Integer id){
         tShirtRepo.deleteById(id);
         return null;
     }
