@@ -24,7 +24,7 @@ public class Games {
     @NotEmpty
     private String description;
     @NotNull
-    @Length(max = 5)
+    @Length(max = 5, min = 2)
     private Double price;
     @NotEmpty
     @Length(max = 50)
@@ -33,9 +33,8 @@ public class Games {
     @Length(max = 11)
     private Integer quantity;
 
-    // Getters and Setters
-    public Integer getGameId(int gameId) {
-        return this.gameId;
+    public Integer getGameId() {
+        return gameId;
     }
 
     public void setGameId(Integer gameId) {
@@ -89,4 +88,6 @@ public class Games {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
+
 }

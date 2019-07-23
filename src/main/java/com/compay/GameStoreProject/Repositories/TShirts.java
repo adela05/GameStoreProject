@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -23,16 +24,14 @@ public class TShirts {
     @NotEmpty
     private String description;
     @NotNull
-    @Length(max = 5)
+    @Length(max = 5, min = 2)
     private Double price;
     @NotNull
     @Length(max = 11)
     private Integer quantity;
 
-
-
-    public Integer getTShirtId(int tShirtId) {
-        return this.tShirtId;
+    public Integer getTShirtId() {
+        return tShirtId;
     }
 
     public void setTShirtId(Integer tShirtId) {
@@ -79,3 +78,8 @@ public class TShirts {
         this.quantity = quantity;
     }
 }
+
+    @OneToMany(mappedBy = "tShirtId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Games> games;
+}
+
