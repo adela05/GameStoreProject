@@ -29,7 +29,8 @@ public class GameService {
     }
 
     // Delete a Game
-    public void deleteGame(int id){
+    public Integer deleteGame(int id){
         gameRepo.deleteById(id);
+        return null;
     }
 }

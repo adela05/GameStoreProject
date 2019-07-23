@@ -50,8 +50,8 @@ public class Consoles {
         this.model = model;
     }
 
-    public String getManufacturer() {
-        return manufacturer;
+    public String getManufacturer(String manufacturer) {
+        return this.manufacturer;
     }
 
     public void setManufacturer(String manufacturer) {

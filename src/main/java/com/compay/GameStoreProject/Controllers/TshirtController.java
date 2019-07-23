@@ -1,0 +1,41 @@
+/*package com.compay.GameStoreProject.Controllers;
+
+import com.compay.GameStoreProject.Repositories.TShirts;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import com.compay.GameStoreProject.Service.TshirtService;
+import javax.validation.Valid;
+import java.util.List;
+
+@RestController
+public class TshirtController {
+    @Autowired
+    private TshirtService service;
+
+    @RequestMapping(value = "/tshirts", method = RequestMethod.GET)
+    public List<TShirts> getAllTShirts(){
+        return service.findAll();
+    }
+    @RequestMapping(value = "/tshirts/{id}", method = RequestMethod.DELETE)
+    public Integer deleteTshirt(@PathVariable Integer tShirtId){
+        return service.getTShirtId(tShirtId);
+    }
+    @RequestMapping(value = "/tshirts/{id}", method = RequestMethod.PUT)
+    public void updateTshirt(@RequestBody @Valid TShirts tshirt, @PathVariable Integer tShirtId){
+        service.save(tshirt);
+    }
+    @RequestMapping(value = "/tshirts", method = RequestMethod.POST)
+    public TShirts addTshirt(@RequestBody @Valid TShirts tshirt){
+        service.save(tshirt);
+        return tshirt;
+    }
+    @RequestMapping(value = "/tshirts/{color}", method = RequestMethod.GET)
+    public String findByColor(@PathVariable String color){
+        return service.getColor(color);
+    }
+    @RequestMapping(value = "/tshirtss/{size}", method = RequestMethod.GET)
+    public String findBySize(@PathVariable String size){
+        return service.getSize(size);
+    }
+}
+*/

@@ -39,16 +39,16 @@ public class TShirts {
         this.tShirtId = tShirtId;
     }
 
-    public String getSize() {
-        return size;
+    public String getSize(String size) {
+        return this.size;
     }
 
     public void setSize(String size) {
         this.size = size;
     }
 
-    public String getColor() {
-        return color;
+    public String getColor(String color) {
+        return this.color;
     }
 
     public void setColor(String color) {
