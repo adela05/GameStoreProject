@@ -16,7 +16,7 @@ public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
-    @Length (max = 11)
+    //@Length (max = 11)
     private Integer invoiceId;
     @NotEmpty
     @Length (max = 80)
@@ -37,25 +37,25 @@ public class Invoice {
     @Length (max = 20)
     private String itemType;
     @NotNull
-    @Length (max = 11)
+    //@Length (max = 11)
     private Integer itemId;
     @NotNull
-    @Length (max = 5, min = 2)
+    //@Length (max = 5, min = 2)
     private Double unitPrice;
     @NotNull
-    @Length (max = 11)
+    //@Length (max = 11)
     private Integer quantity;
     @NotNull
-    @Length(max = 5, min = 2)
+    //@Length(max = 5, min = 2)
     private Double subtotal;
     @NotNull
-    @Length(max = 5, min = 2)
+    //@Length(max = 5, min = 2)
     private Double tax;
     @NotNull
-    @Length(max = 5, min = 2)
+    //@Length(max = 5, min = 2)
     private Double processingFee;
     @NotNull
-    @Length(max = 5, min = 2)
+    //@Length(max = 5, min = 2)
     private Double total;
 
 
