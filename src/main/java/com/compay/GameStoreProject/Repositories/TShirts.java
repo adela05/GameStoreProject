@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -15,9 +16,20 @@ public class TShirts {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer tShirtId;
     @NotEmpty
+    @Length(max = 20)
+    private String size;
+    @NotEmpty
+    @Length(max = 20)
     private String color;
     @NotEmpty
-    private Character size;
+    private String description;
+    @NotNull
+    @Length(max = 5, min = 2)
+    private Double price;
+    @NotNull
+    @Length(max = 11)
+    private Integer quantity;
+
 
     public Integer getTShirtId() {
         return tShirtId;
@@ -25,6 +37,14 @@ public class TShirts {
 
     public void setTShirtId(Integer tShirtId) {
         this.tShirtId = tShirtId;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
     }
 
     public String getColor() {
@@ -35,11 +55,30 @@ public class TShirts {
         this.color = color;
     }
 
-    public Character getSize() {
-        return size;
+    public String getDescription() {
+        return description;
     }
 
-    public void setSize(Character size) {
-        this.size = size;
+    public void setDescription(String description) {
+        this.description = description;
     }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    @OneToMany(mappedBy = "tShirtId", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Games> games;
 }
