@@ -58,6 +58,17 @@ public class Invoice {
     //@Length(max = 5, min = 2)
     private Double total;
 
+    public Invoice(String itemType, Integer itemId, Double unitPrice, Integer quantity, Double subtotal,
+                   Double tax, Double processingFee, Double total) {
+        this.itemType = itemType;
+        this.itemId = itemId;
+        this.unitPrice = unitPrice;
+        this.quantity = quantity;
+        this.subtotal = subtotal;
+        this.tax = tax;
+        this.processingFee = processingFee;
+        this.total = total;
+    }
 
     public Integer getInvoiceId() {
         return invoiceId;
