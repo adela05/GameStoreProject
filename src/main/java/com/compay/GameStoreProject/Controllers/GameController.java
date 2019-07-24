@@ -39,8 +39,8 @@ public class GameController {
         return service.findByStudio(studio);
     }
     @RequestMapping(value = "/games/rating/{rating}", method = RequestMethod.GET)
-    public List<Games> findByESRBRating(@PathVariable String eSRBRating){
-        return service.findByESRBRating(eSRBRating);
+    public List<Games> findByEsrbrating(@PathVariable String esrbrating){
+        return service.findByEsrbrating(esrbrating);
     }
     @RequestMapping(value = "/games/title/{title}", method = RequestMethod.GET)
     public List<Games> findByTitle(@PathVariable String title){
