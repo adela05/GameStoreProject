@@ -13,24 +13,23 @@ import javax.validation.constraints.NotNull;
 public class Games {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    //@Length(max = 11)
     private Integer gameId;
     @NotEmpty
     @Length(max = 50)
     private String title;
-    //@NotEmpty
-    //@Length(max = 50)
+    @NotEmpty
+    @Length(max = 50)
     private String esrbrating;  // Everyone, Teen, Mature, Adult
     @NotEmpty
     private String description;
     @NotNull
-    //@Length(max = 5, min = 2)
+    @Length(max = 5, min = 2)
     private Double price;
     @NotEmpty
     @Length(max = 50)
     private String studio;
     @NotNull
-    //@Length(max = 11)
+    @Length(max = 11)
     private Integer quantity;
 
     // Getters and Setters
