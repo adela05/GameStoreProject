@@ -1,35 +1,32 @@
 package com.compay.GameStoreProject.Service;
 
-import com.compay.GameStoreProject.Repositories.ConsoleRepository;
-import com.compay.GameStoreProject.Repositories.InvoiceRepository;
+import com.compay.GameStoreProject.Repositories.TaxRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
 public class InvoiceService {
     @Autowired
     private TaxRepository taxRepo;
 
     // method
-    public double taxes(Character state){
-        Double stateRate;
-       invoiceRepo.findByState(state);
-       return ;
+    public Character getState(Character state){
+        taxRepo.findByState(state);
+        return state;
     }
     // method
-    public double subtotal(Integer quantity, Double unitPrice){
-       return invoiceRepo.findSubtotal(quantity * unitPrice);
+    public double taxes(Double rate){
+        return taxRepo.findByRate(rate);
     }
     public double subFee(Double addition){
-        return invoiceRepo.getSubtotal() * addition;
+        return taxRepo.getSubtotal() * addition;
     }
     public Double processing(Integer quantity){
         if(quantity >= 10){
-            Taxes.subFee(additional);
+            taxRepo.subFee(additional);
         }
         else if(invoice.getType.equals(“Tshirt”)){
 
         }
 
     }
+
 }
