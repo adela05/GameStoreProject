@@ -28,3 +28,4 @@ public class ProcessingFee {
         this.fee = fee;
     }
 }
+
