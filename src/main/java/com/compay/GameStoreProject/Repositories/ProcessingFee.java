@@ -15,13 +15,17 @@ public class ProcessingFee {
     public String getProductType() {
         return productType;
     }
+
     public void setProductType(String productType) {
         this.productType = productType;
     }
+
     public Double getFee() {
         return fee;
     }
+
     public void setFee(Double fee) {
         this.fee = fee;
     }
 }
+
