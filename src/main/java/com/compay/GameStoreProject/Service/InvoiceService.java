@@ -1,4 +1,6 @@
 package com.compay.GameStoreProject.Service;
 
-public class InventoryService {
+public class InvoiceService {
+
+
 }
