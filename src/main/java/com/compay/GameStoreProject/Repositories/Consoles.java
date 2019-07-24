@@ -27,10 +27,10 @@ public class Consoles {
     @NotEmpty
     @Length(max = 20)
     private String processor;
-    @NotNull
+    //@NotNull
     //@Length(max = 5, min = 2)
     private Double price;
-    @NotNull
+    //@NotNull
     //@Length(max = 11)
     private Integer quantity;
 
@@ -51,7 +51,7 @@ public class Consoles {
         this.model = model;
     }
 
-    public String getManufacturer(String manufacturer) {
+    public String getManufacturer() {
         return this.manufacturer;
     }
 

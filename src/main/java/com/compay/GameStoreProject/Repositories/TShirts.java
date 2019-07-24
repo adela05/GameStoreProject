@@ -39,7 +39,7 @@ public class TShirts {
         this.tShirtId = tShirtId;
     }
 
-    public String getSize(String size) {
+    public String getSize() {
         return this.size;
     }
 
@@ -47,7 +47,7 @@ public class TShirts {
         this.size = size;
     }
 
-    public String getColor(String color) {
+    public String getColor() {
         return this.color;
     }
 
