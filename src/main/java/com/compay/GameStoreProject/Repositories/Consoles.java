@@ -51,7 +51,7 @@ public class Consoles {
         this.model = model;
     }
 
-    public String getManufacturer(String manufacturer) {
+    public String getManufacturer() {
         return this.manufacturer;
     }
 
