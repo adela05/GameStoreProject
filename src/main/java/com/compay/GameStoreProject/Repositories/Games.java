@@ -13,24 +13,24 @@ import javax.validation.constraints.NotNull;
 public class Games {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Length(max = 11)
+    //@Length(max = 11)
     private Integer gameId;
-    @NotEmpty
-    @Length(max = 50)
+    //@NotEmpty
+    //@Length(max = 50)
     private String title;
-    @NotEmpty
-    @Length(max = 50)
-    private String eSRBRating;  // Everyone, Teen, Mature, Adult
-    @NotEmpty
+    //@NotEmpty
+    //@Length(max = 50)
+    private String rating;  // Everyone, Teen, Mature, Adult
+    //@NotEmpty
     private String description;
-    @NotNull
-    @Length(max = 5, min = 2)
+    //@NotNull
+    //@Length(max = 5, min = 2)
     private Double price;
-    @NotEmpty
-    @Length(max = 50)
+    //@NotEmpty
+    //@Length(max = 50)
     private String studio;
-    @NotNull
-    @Length(max = 11)
+    //@NotNull
+    //@Length(max = 11)
     private Integer quantity;
 
     // Getters and Setters
@@ -51,12 +51,13 @@ public class Games {
         this.title = title;
     }
 
-    public String getESRBRating() {
-        return this.eSRBRating;
+
+    public String getRating(String rating) {
+        return this.rating;
     }
 
-    public void setESRBRating(String eSRBRating) {
-        this.eSRBRating = eSRBRating;
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 
     public String getDescription() {

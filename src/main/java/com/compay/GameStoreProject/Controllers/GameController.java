@@ -28,6 +28,7 @@ public class GameController {
     public void updateGame(@RequestBody @Valid Games game, @PathVariable Integer id){
         service.updateGame(game, id);
     }
+
     @RequestMapping(value = "/games", method = RequestMethod.POST)
     public Games saveGame(@RequestBody @Valid Games game){
         service.saveGame(game);
@@ -38,8 +39,8 @@ public class GameController {
         return service.findByStudio(studio);
     }
     @RequestMapping(value = "/games/rating/{rating}", method = RequestMethod.GET)
-    public List<Games> findByESRBRating(@PathVariable Character eSRBRating){
-        return service.findByESRBRating(eSRBRating);
+    public List<Games> findByRating(@PathVariable String rating){
+        return service.findByRating(rating);
     }
     @RequestMapping(value = "/games/title/{title}", method = RequestMethod.GET)
     public List<Games> findByTitle(@PathVariable String title){
