@@ -20,7 +20,7 @@ public class Games {
     private String title;
     //@NotEmpty
     //@Length(max = 50)
-    private String eSRBRating;  // Everyone, Teen, Mature, Adult
+    private String esrbrating;  // Everyone, Teen, Mature, Adult
     @NotEmpty
     private String description;
     @NotNull
@@ -43,7 +43,7 @@ public class Games {
         this.gameId = gameId;
     }
 
-    public String getTitle(String title) {
+    public String getTitle() {
         return this.title;
     }
 
@@ -51,12 +51,12 @@ public class Games {
         this.title = title;
     }
 
-    public String getESRBRating(String eSRBRating) {
-        return this.eSRBRating;
+    public String getEsrbrating() {
+        return this.esrbrating;
     }
 
-    public void setESRBRating(String eSRBRating) {
-        this.eSRBRating = eSRBRating;
+    public void setEsrbrating(String esrbrating) {
+        this.esrbrating = esrbrating;
     }
 
     public String getDescription() {
@@ -75,7 +75,7 @@ public class Games {
         this.price = price;
     }
 
-    public String getStudio(String studio) {
+    public String getStudio() {
         return this.studio;
     }
 
