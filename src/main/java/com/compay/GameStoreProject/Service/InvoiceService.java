@@ -13,20 +13,28 @@ public class InvoiceService {
         return state;
     }
     // method
-    public double taxes(Double rate){
-        return taxRepo.findByRate(rate);
+    public double findByTaxRate(Double rate){
+        taxRepo.findByRate(rate);
+        return rate;
     }
-    public double subFee(Double addition){
-        return taxRepo.getSubtotal() * addition;
-    }
-    public Double processing(Integer quantity){
-        if(quantity >= 10){
-            taxRepo.subFee(additional);
-        }
-        else if(invoice.getType.equals(“Tshirt”)){
 
-        }
-
+    public double subFee(Integer quantity, Double unitPrice){
+        Double subtotal= quantity * unitPrice;
+        return subtotal;
     }
+    public double taxFee(Double subtotal, Double taxRate){
+        Double result = subtotal * taxRate;
+        return result;
+    }
+//    public Double processing(Integer quantity){
+//        Double additionalFee =15.49;
+//        if(quantity >= 10){
+//            taxRepo.subtotal + additionalFee;
+//        }
+//        else if(invoice.getType.equals(“Tshirt”)){
+//
+//        }
+//
+//    }
 
 }
