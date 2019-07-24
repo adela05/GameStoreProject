@@ -18,8 +18,8 @@ public class Games {
     @NotEmpty
     @Length(max = 50)
     private String title;
-    //@NotEmpty
-    //@Length(max = 50)
+    @NotEmpty
+    @Length(max = 50)
     private String esrbrating;  // Everyone, Teen, Mature, Adult
     @NotEmpty
     private String description;
